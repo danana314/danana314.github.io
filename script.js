@@ -51,7 +51,7 @@ function animateAnagram() {
     },
     easing: 'easeInOutQuint',
   });
-  setTimeout(animateAnagram, showReal ? 5000: 1000)
+  setTimeout(animateAnagram, showReal ? 5000: 1500)
 }
 
 let siteAnagram = ['el-01', 'el-02', 'el-03', 'el-04', 'el-05', 'el-06', 'el-07', 'el-08', 'el-09', 'el-10', 'el-11'];
