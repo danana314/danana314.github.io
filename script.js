@@ -3,10 +3,11 @@ function calcXPositions(array) {
   return positions
 }
 
-function calcXTranslation(el, arr2){
-  initial_pos = xPositions[siteAnagram.indexOf(el.id)]
-  final_pos = xPositions[arr2.indexOf(el.id)]
-  return final_pos - initial_pos
+function calcXTranslation(el, final){
+  // xPositions = calcXPositions(siteAnagram)
+  initialPos = xPositions[siteAnagram.indexOf(el.id)]
+  finalPos = xPositions[final.indexOf(el.id)]
+  return finalPos - initialPos
 }
 
 function shuffle(array) {
@@ -45,7 +46,7 @@ function animateAnagram() {
 
   final = showReal ? [...real] : shuffle(siteAnagram)
   anime({
-    targets: '.demo .el',
+    targets: '.name .el',
     translateX: function(el, i, l) {
       return calcXTranslation(el, final);
     },
