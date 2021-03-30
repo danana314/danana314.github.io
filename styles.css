@@ -7,7 +7,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-family: "fira code";
+  font-family: "fira code",Monaco,Lucida Console,monospace;
   height: 100vh;
   box-sizing: border-box;
   margin: 0;
