@@ -4,7 +4,6 @@ function calcXPositions(array) {
 }
 
 function calcXTranslation(el, final){
-  // xPositions = calcXPositions(siteAnagram)
   initialPos = xPositions[siteAnagram.indexOf(el.id)]
   finalPos = xPositions[final.indexOf(el.id)]
   return finalPos - initialPos
@@ -35,6 +34,7 @@ function animateAnagram() {
     count = 1
   }
 
+  // console.log(calcXPositions(siteAnagram))
   var showReal = false;
   if (count>=5) {
     showReal = true
@@ -55,14 +55,24 @@ function animateAnagram() {
   setTimeout(animateAnagram, showReal ? 8000: 2000)
 }
 
+window.onresize = resetAnagram;
+
 let siteAnagram = ['el-01', 'el-02', 'el-03', 'el-04', 'el-05', 'el-06', 'el-07', 'el-08', 'el-09', 'el-10', 'el-11'];
 let real = ['el-05', 'el-01', 'el-06', 'el-03', 'el-07', 'el-04', 'el-10', 'el-11', 'el-08', 'el-02', 'el-09'];
 let xPositions = calcXPositions(siteAnagram);
 var count;
+var animation;
 animateAnagram()
+// console.log(xPositions)
 
 function toggleLightMode() {
   var el = document.body;
   el.classList.toggle("light-mode")
   document.getElementById("light-toggle").classList.toggle("light-mode")
+}
+
+function resetAnagram() {
+  console.log("resize");
+  siteAnagram.map(el => document.getElementById(el).style.removeProperty('transform'))
+  xPositions = calcXPositions(siteAnagram)
 }
