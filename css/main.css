@@ -1,6 +1,6 @@
 body {
-  background-color: #222;
-  color: #fff;
+  background-color: #0D1A1A;
+  color: #c6d9df;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,9 +11,32 @@ body {
   height: 100vh;
   box-sizing: border-box;
   margin: 0;
+  position: relative;
 }
 
 span {
   display: inline-block;
 }
 
+/* body { */
+/*   background-color: #0D1A1A; */
+/*   color: #c6d9df; */
+/*   /1* accent: #486f81; *1/ */
+/* } */
+.light-mode {
+  color: #0D1A1A;
+  background-color: #c6d9df;
+  /* accent: #486f81; */
+}
+
+.light-mode #light-toggle {
+    content:url("../img/bulb_lightmode.png")
+}
+
+#light-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    content:url("../img/bulb_darkmode.png")
+}

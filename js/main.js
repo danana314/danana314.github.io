@@ -60,3 +60,9 @@ let real = ['el-05', 'el-01', 'el-06', 'el-03', 'el-07', 'el-04', 'el-10', 'el-1
 let xPositions = calcXPositions(siteAnagram);
 var count;
 animateAnagram()
+
+function toggleLightMode() {
+  var el = document.body;
+  el.classList.toggle("light-mode")
+  document.getElementById("light-toggle").classList.toggle("light-mode")
+}
