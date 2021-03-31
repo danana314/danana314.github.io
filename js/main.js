@@ -44,11 +44,11 @@ function animateAnagram() {
     count += 1
   }
 
-  final = showReal ? [...real] : shuffle(siteAnagram)
+  activeAnagram = showReal ? [...real] : shuffle(siteAnagram)
   anime({
     targets: '.name .el',
     translateX: function(el, i, l) {
-      return calcXTranslation(el, final);
+      return calcXTranslation(el, activeAnagram);
     },
     easing: 'easeInOutQuint',
   });
@@ -61,6 +61,7 @@ let siteAnagram = ['el-01', 'el-02', 'el-03', 'el-04', 'el-05', 'el-06', 'el-07'
 let real = ['el-05', 'el-01', 'el-06', 'el-03', 'el-07', 'el-04', 'el-10', 'el-11', 'el-08', 'el-02', 'el-09'];
 let xPositions = calcXPositions(siteAnagram);
 var count;
+var activeAnagram;
 var animation;
 animateAnagram()
 // console.log(xPositions)
@@ -72,7 +73,11 @@ function toggleLightMode() {
 }
 
 function resetAnagram() {
-  console.log("resize");
-  siteAnagram.map(el => document.getElementById(el).style.removeProperty('transform'))
-  xPositions = calcXPositions(siteAnagram)
+  siteAnagram.map(el => document.getElementById(el).style.removeProperty('transform'));
+  xPositions = calcXPositions(siteAnagram);
+  anime({
+    targets: '.name .el',
+    translateX: function(el) { return calcXTranslation(el, activeAnagram) },
+    easing: 'easeInOutQuint'
+  });
 }
