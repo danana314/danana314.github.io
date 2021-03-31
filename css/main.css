@@ -1,13 +1,13 @@
 body {
   background-color: #222;
   color: #fff;
-  font-weight: 800;
-  font-size: 5vw;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-family: "fira code",Monaco,Lucida Console,monospace;
+  font-family: 'Fira Code', monospace;
+  font-weight: 800;
+  font-size: 5vw;
   height: 100vh;
   box-sizing: border-box;
   margin: 0;
