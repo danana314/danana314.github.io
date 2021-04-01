@@ -46,7 +46,7 @@ function animateAnagram() {
 
   activeAnagram = showReal ? [...real] : shuffle(siteAnagram)
   anime({
-    targets: '.name .el',
+    targets: '.anagramTitle .el',
     translateX: function(el, i, l) {
       return calcXTranslation(el, activeAnagram);
     },
@@ -76,8 +76,14 @@ function resetAnagram() {
   siteAnagram.map(el => document.getElementById(el).style.removeProperty('transform'));
   xPositions = calcXPositions(siteAnagram);
   anime({
-    targets: '.name .el',
+    targets: '.anagramTitle .el',
     translateX: function(el) { return calcXTranslation(el, activeAnagram) },
     easing: 'easeInOutQuint'
   });
+}
+
+function handleTermKeyUp(e) {
+  if (e.key === 'Enter' || e.keyCode === 13) {
+    console.log("enter")
+  }
 }
