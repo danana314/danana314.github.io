@@ -24,9 +24,19 @@ header {
     position: absolute;
     top: 0px;
     right: 10px;
-    width: 25px;
+    width: 20px;
     /* height: 25px; */
     content:url("../img/bulb_darkmode.png")
+}
+
+.navbar #pages {
+  position: absolute;
+  right: 50px;
+}
+
+#pages a {
+  color: #c6d9df;
+  text-decoration: none;
 }
 
 .navbar #term {
