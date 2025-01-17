@@ -57,8 +57,8 @@ function animateAnagram() {
 
 window.onresize = resetAnagram;
 
-let siteAnagram = ['el-01', 'el-02', 'el-03', 'el-04', 'el-05', 'el-06', 'el-07', 'el-08', 'el-09', 'el-10', 'el-11'];
-let real = ['el-05', 'el-01', 'el-06', 'el-03', 'el-07', 'el-04', 'el-10', 'el-11', 'el-08', 'el-02', 'el-09'];
+let siteAnagram = ['el-01', 'el-02', 'el-03', 'el-04', 'el-05', 'el-06', 'el-07'];
+let real = ['el-05', 'el-01', 'el-06', 'el-03', 'el-07', 'el-04', 'el-02'];
 let xPositions = calcXPositions(siteAnagram);
 var count;
 var activeAnagram;
